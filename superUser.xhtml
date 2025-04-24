@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+    <title>Gestión de Usuarios</title>
+    <link rel="stylesheet" type="text/css" href="admin.css" />
+
+</h:head>
+
+<f:view>
+    <!-- Inicializa los datos al renderizar la vista -->
+    <f:metadata>
+        <f:event type="preRenderView" listener="#{superUserBean.init}" />
+    </f:metadata>
+
+    <h:body>
+        <h:form>
+            <h2>Administración de Usuarios</h2>
+
+            <h:dataTable value="#{superUserBean.listaUsuarios}" var="usuario" border="1">
+                <h:column>
+                    <f:facet name="header">ID</f:facet>
+                    #{usuario.id}
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header">Email</f:facet>
+                    #{usuario.email}
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header">Nueva Contraseña</f:facet>
+                    <h:inputSecret value="#{usuario.password}" />
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header">Acción</f:facet>
+                    <h:commandButton value="Actualizar" action="#{superUserBean.actualizarPassword(usuario)}">
+                        <f:ajax render="@form" />
+                    </h:commandButton>
+                </h:column>
+            </h:dataTable>
+
+            <h:messages globalOnly="true" layout="table" />
+        </h:form>
+    </h:body>
+</f:view>
+
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+    <link rel="stylesheet" type="text/css" href="#{facesContext.externalContext.requestContextPath}/css/xp/xp.css" rel="stylesheet" type="text/css" />
+    <title>Consulta de usuarios</title>
+    <h:outputStylesheet library="css" name="table-style.css" />
+</h:head>
+<body>
+    <div id="header">
+        <ui:insert name="header">
+            <ui:include src="banner.xhtml" />
+        </ui:insert>
+    </div>
+    <f:view>
+        <h:form id="consultaUsuarios">
+            <center>
+                <br />
+                <br />
+                Consulta de usuarios<h:outputText value="#{queryBeanUno.listaUsuarios()}"/>
+                <h:dataTable value="#{queryBeanUno.listaUsuarios()}" var="u"
+                             styleClass="order-table" headerClass="order-table-header"
+                             rowClasses="order-table-odd-row,order-table-even-row">
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="ID Usuario" />
+                        </f:facet>
+                        <h:commandLink id="link"
+                                       action="#{queryBeanUno.actUsuarios(u.id_usuario)}"
+                                       value="#{u.id_usuario}" >
+                            <f:param name="inicio" value="false" />
+                        </h:commandLink>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="Paterno" />
+                        </f:facet>
+                        <h:outputText value="#{u.paterno}" />
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="Materno" />
+                        </f:facet>
+                        <h:outputText value="#{u.materno}" />
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="Nombre" />
+                        </f:facet>
+                        <h:outputText value="#{u.nombre}" />
+                    </h:column>
+                </h:dataTable>
+                <table border="0" cellpadding="10">
+                    <tr>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Para ACTUALIZAR, De click en el ID de catalogos</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                    </tr>
+                </table>
+            </center>
+        </h:form>
+    </f:view>
+</body>
+</html>

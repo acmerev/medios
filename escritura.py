@@ -3,7 +3,7 @@ import pyautogui
 import keyboard
 
 # Ruta del archivo a leer
-archivo = "LogPhaseListener.java"
+archivo = "AdminVerificationBean.java"
 
 # Leer el contenido del archivo
 with open(archivo, "r", encoding="utf-8") as f:

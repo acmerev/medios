@@ -1,89 +1,550 @@
-package testPackage.com.bean;
+ <navigation-rule>
+        <from-view-id>/pages/actualizaArea_destino.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>login?faces-redirect=true</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+            <redirect />
+        </navigation-case>
+    </navigation-rule>
 
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ViewScoped;
-import javax.faces.context.FacesContext;
-import javax.servlet.http.HttpSession;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-import testPackage.com.dao.UsuariosDAO;
-import testPackage.com.model.User;
-import javax.faces.component.html.HtmlInputHidden;
-import java.io.Serializable;
+    <navigation-rule>
+        <from-view-id>/pages/actualizaBitacora.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>login?faces-redirect=true</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+            <redirect />
+        </navigation-case>
+    </navigation-rule>
 
-@Component
-@ManagedBean
-@ViewScoped
-public class AdminVerificationBean implements Serializable {
+    <navigation-rule>
+        <from-view-id>/pages/actualizaCatalogos.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>login?faces-redirect=true</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+            <redirect />
+        </navigation-case>
+    </navigation-rule>
 
-    private static final long serialVersionUID = 1L;
+    <navigation-rule>
+        <from-view-id>/pages/actualizaContenido.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>login?faces-redirect=true</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+            <redirect />
+        </navigation-case>
+    </navigation-rule>
 
-    private String username;
-    private String password;
-    private HtmlInputHidden userIdToEdit;
+    <navigation-rule>
+        <from-view-id>/pages/actualizaEntradas.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>login?faces-redirect=true</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+            <redirect />
+        </navigation-case>
+    </navigation-rule>
 
-    @Autowired
-    private UsuariosDAO usuariosDAO; // Asegúrate de tener tu DAO configurado
+    <navigation-rule>
+        <from-view-id>/pages/actualizaMedios.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>login?faces-redirect=true</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+            <redirect />
+        </navigation-case>
+    </navigation-rule>
 
-    public String verifyAdmin() {
-        if (userIdToEdit == null || userIdToEdit.getValue() == null) {
-            FacesContext.getCurrentInstance().addMessage(null, new javax.faces.application.FacesMessage(javax.faces.application.FacesMessage.SEVERITY_ERROR, "Error: No se especificó el usuario a editar.", null));
-            return null;
-        }
+    <navigation-rule>
+        <from-view-id>/pages/actualizaReciclaje.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>login?faces-redirect=true</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+            <redirect />
+        </navigation-case>
+    </navigation-rule>
 
-        // Convertir el valor del HtmlInputHidden a Long (o el tipo de tu ID de usuario)
-        Long userId = null;
-        try {
-            userId = Long.parseLong(userIdToEdit.getValue().toString());
-        } catch (NumberFormatException e) {
-            FacesContext.getCurrentInstance().addMessage(null, new javax.faces.application.FacesMessage(javax.faces.application.FacesMessage.SEVERITY_ERROR, "Error: ID de usuario inválido.", null));
-            return null;
-        }
+    <navigation-rule>
+        <from-view-id>/pages/actualizaReingreso.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>login?faces-redirect=true</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+            <redirect />
+        </navigation-case>
+    </navigation-rule>
 
-        User admin = usuariosDAO.findAdminByUsernameAndPassword(username, password); // Implementa este método en tu DAO
+    <navigation-rule>
+        <from-view-id>/pages/actualizaRespaldo.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>login?faces-redirect=true</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+            <redirect />
+        </navigation-case>
+    </navigation-rule>
 
-        if (admin != null) {
-            // Almacenar autorización temporal en la sesión
-            HttpSession session = (HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(true);
-            session.setAttribute("adminAuthorizedForEdit_" + userId, true);
-            return "editarUsuario.xhtml?faces-redirect=true&userId=" + userId; // Redirigir al formulario de edición
-        } else {
-            FacesContext.getCurrentInstance().addMessage(null, new javax.faces.application.FacesMessage(javax.faces.application.FacesMessage.SEVERITY_ERROR, "Credenciales de administrador incorrectas.", null));
-            return null;
-        }
-    }
+    <navigation-rule>
+        <from-view-id>/pages/actualizaSalidas.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>login?faces-redirect=true</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+            <redirect />
+        </navigation-case>
+    </navigation-rule>
 
-    // Getters y setters
+    <navigation-rule>
+        <from-view-id>/pages/actualizaTipo_medio.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>login?faces-redirect=true</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+            <redirect />
+        </navigation-case>
+    </navigation-rule>
 
-    public String getUsername() {
-        return username;
-    }
+    <navigation-rule>
+        <from-view-id>/pages/actualizaUsuarios.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>login?faces-redirect=true</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+            <redirect />
+        </navigation-case>
+    </navigation-rule>
 
-    public void setUsername(String username) {
-        this.username = username;
-    }
+    <navigation-rule>
+        <from-view-id>/pages/adminVerification.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>login?faces-redirect=true</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+            <redirect />
+        </navigation-case>
+    </navigation-rule>
 
-    public String getPassword() {
-        return password;
-    }
+    <navigation-rule>
+        <from-view-id>/pages/altaArea_destino.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>login?faces-redirect=true</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+            <redirect />
+        </navigation-case>
+    </navigation-rule>
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
+    <navigation-rule>
+        <from-view-id>/pages/altaCatalogos.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>login?faces-redirect=true</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+            <redirect />
+        </navigation-case>
+    </navigation-rule>
 
-    public HtmlInputHidden getUserIdToEdit() {
-        return userIdToEdit;
-    }
+    <navigation-rule>
+        <from-view-id>/pages/altaContenido.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>login?faces-redirect=true</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+            <redirect />
+        </navigation-case>
+    </navigation-rule>
 
-    public void setUserIdToEdit(HtmlInputHidden userIdToEdit) {
-        this.userIdToEdit = userIdToEdit;
-    }
+    <navigation-rule>
+        <from-view-id>/pages/altaCorreo_moroso.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>login?faces-redirect=true</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+            <redirect />
+        </navigation-case>
+    </navigation-rule>
 
-    public UsuariosDAO getUsuariosDAO() {
-        return usuariosDAO;
-    }
+    <navigation-rule>
+        <from-view-id>/pages/altaEntradas.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>login?faces-redirect=true</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+            <redirect />
+        </navigation-case>
+    </navigation-rule>
 
-    public void setUsuariosDAO(UsuariosDAO usuariosDAO) {
-        this.usuariosDAO = usuariosDAO;
-    }
-}
+    <navigation-rule>
+        <from-view-id>/pages/altaMedios.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>login?faces-redirect=true</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+            <redirect />
+        </navigation-case>
+    </navigation-rule>
+
+    <navigation-rule>
+        <from-view-id>/pages/altaProrroga.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>login?faces-redirect=true</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+            <redirect />
+        </navigation-case>
+    </navigation-rule>
+
+    <navigation-rule>
+        <from-view-id>/pages/altaReciclaje.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>login?faces-redirect=true</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+            <redirect />
+        </navigation-case>
+    </navigation-rule>
+
+    <navigation-rule>
+        <from-view-id>/pages/altaReingreso.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>login?faces-redirect=true</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+            <redirect />
+        </navigation-case>
+    </navigation-rule>
+
+    <navigation-rule>
+        <from-view-id>/pages/altaRespaldo.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>login?faces-redirect=true</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+            <redirect />
+        </navigation-case>
+    </navigation-rule>
+
+    <navigation-rule>
+        <from-view-id>/pages/altaSalidas.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>login?faces-redirect=true</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+            <redirect />
+        </navigation-case>
+    </navigation-rule>
+
+    <navigation-rule>
+        <from-view-id>/pages/altaTipo_medio.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>login?faces-redirect=true</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+            <redirect />
+        </navigation-case>
+    </navigation-rule>
+
+    <navigation-rule>
+        <from-view-id>/pages/altaUsuarios.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>login?faces-redirect=true</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+            <redirect />
+        </navigation-case>
+    </navigation-rule>
+
+    <navigation-rule>
+        <from-view-id>/pages/banner.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>login?faces-redirect=true</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+            <redirect />
+        </navigation-case>
+    </navigation-rule>
+
+    <navigation-rule>
+        <from-view-id>/pages/cancelaEntradas.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>login?faces-redirect=true</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+            <redirect />
+        </navigation-case>
+    </navigation-rule>
+
+    <navigation-rule>
+        <from-view-id>/pages/cancelaReciclaje.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>login?faces-redirect=true</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+            <redirect />
+        </navigation-case>
+    </navigation-rule>
+
+    <navigation-rule>
+        <from-view-id>/pages/cancelaReingreso.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>login?faces-redirect=true</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+            <redirect />
+        </navigation-case>
+    </navigation-rule>
+
+    <navigation-rule>
+        <from-view-id>/pages/cancelaRespaldo.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>login?faces-redirect=true</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+            <redirect />
+        </navigation-case>
+    </navigation-rule>
+
+    <navigation-rule>
+        <from-view-id>/pages/cancelaSalidas.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>login?faces-redirect=true</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+            <redirect />
+        </navigation-case>
+    </navigation-rule>
+
+    <navigation-rule>
+        <from-view-id>/pages/consultaArea_destino.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>login?faces-redirect=true</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+            <redirect />
+        </navigation-case>
+    </navigation-rule>
+
+    <navigation-rule>
+        <from-view-id>/pages/consultaBitacora.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>login?faces-redirect=true</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+            <redirect />
+        </navigation-case>
+    </navigation-rule>
+
+    <navigation-rule>
+        <from-view-id>/pages/consultaCatalogos.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>login?faces-redirect=true</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+            <redirect />
+        </navigation-case>
+    </navigation-rule>
+
+    <navigation-rule>
+        <from-view-id>/pages/consultaContenido.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>login?faces-redirect=true</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+            <redirect />
+        </navigation-case>
+    </navigation-rule>
+
+    <navigation-rule>
+        <from-view-id>/pages/consultaCorreo_moroso.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>login?faces-redirect=true</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+            <redirect />
+        </navigation-case>
+    </navigation-rule>
+
+    <navigation-rule>
+        <from-view-id>/pages/consultaEntradas.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>login?faces-redirect=true</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+            <redirect />
+        </navigation-case>
+    </navigation-rule>
+
+    <navigation-rule>
+        <from-view-id>/pages/consultaMedios.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>login?faces-redirect=true</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+            <redirect />
+        </navigation-case>
+    </navigation-rule>
+
+    <navigation-rule>
+        <from-view-id>/pages/consultaReciclaje.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>login?faces-redirect=true</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+            <redirect />
+        </navigation-case>
+    </navigation-rule>
+
+    <navigation-rule>
+        <from-view-id>/pages/consultaReingreso.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>login?faces-redirect=true</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+            <redirect />
+        </navigation-case>
+    </navigation-rule>
+
+    <navigation-rule>
+        <from-view-id>/pages/consultaRespaldo.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>login?faces-redirect=true</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+            <redirect />
+        </navigation-case>
+    </navigation-rule>
+
+    <navigation-rule>
+        <from-view-id>/pages/consultaSalidas.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>login?faces-redirect=true</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+            <redirect />
+        </navigation-case>
+    </navigation-rule>
+
+    <navigation-rule>
+        <from-view-id>/pages/consultaTipo_medio.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>login?faces-redirect=true</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+            <redirect />
+        </navigation-case>
+    </navigation-rule>
+
+    <navigation-rule>
+        <from-view-id>/pages/consultaUsuarios.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>login?faces-redirect=true</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+            <redirect />
+        </navigation-case>
+    </navigation-rule>
+
+    <navigation-rule>
+        <from-view-id>/pages/criteriosArea_destino.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>login?faces-redirect=true</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+            <redirect />
+        </navigation-case>
+    </navigation-rule>
+
+    <navigation-rule>
+        <from-view-id>/pages/criteriosBitacora.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>login?faces-redirect=true</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+            <redirect />
+        </navigation-case>
+    </navigation-rule>
+
+    <navigation-rule>
+        <from-view-id>/pages/criteriosCorreo_moroso.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>login?faces-redirect=true</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+            <redirect />
+        </navigation-case>
+    </navigation-rule>
+
+    <navigation-rule>
+        <from-view-id>/pages/criteriosEntradas.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>login?faces-redirect=true</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+            <redirect />
+        </navigation-case>
+    </navigation-rule>
+
+    <navigation-rule>
+        <from-view-id>/pages/criteriosReciclaje.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>login?faces-redirect=true</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+            <redirect />
+        </navigation-case>
+    </navigation-rule>
+
+    <navigation-rule>
+        <from-view-id>/pages/criteriosReingreso.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>login?faces-redirect=true</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+            <redirect />
+        </navigation-case>
+    </navigation-rule>
+
+    <navigation-rule>
+        <from-view-id>/pages/criteriosRespaldo.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>login?faces-redirect=true</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+            <redirect />
+        </navigation-case>
+    </navigation-rule>
+
+    <navigation-rule>
+        <from-view-id>/pages/criteriosSalidas.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>login?faces-redirect=true</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+            <redirect />
+        </navigation-case>
+    </navigation-rule>
+
+    <navigation-rule>
+        <from-view-id>/pages/criteriosUsuarios.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>login?faces-redirect=true</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+            <redirect />
+        </navigation-case>
+    </navigation-rule>
+
+    <navigation-rule>
+        <from-view-id>/pages/critProrroga.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>login?faces-redirect=true</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+            <redirect />
+        </navigation-case>
+    </navigation-rule>
+
+    <navigation-rule>
+        <from-view-id>/pages/detalleContenido.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>login?faces-redirect=true</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+            <redirect />
+        </navigation-case>
+    </navigation-rule>
+
+    <navigation-rule>
+        <from-view-id>/pages/detCorreo_moroso.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>login?faces-redirect=true</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+            <redirect />
+        </navigation-case>
+    </navigation-rule>
+
+    <navigation-rule>
+        <from-view-id>/pages/impresionReingreso.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>login?faces-redirect=true</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+            <redirect />
+        </navigation-case>
+    </navigation-rule>
+
+    <navigation-rule>
+        <from-view-id>/pages/impresionSalidas.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>login?faces-redirect=true</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+            <redirect />
+        </navigation-case>
+    </navigation-rule>
+
+    <navigation-rule>
+        <from-view-id>/pages/reporteInventario.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>login?faces-redirect=true</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+            <redirect />
+        </navigation-case>
+    </navigation-rule>
+
+    <navigation-rule>
+        <from-view-id>/pages/w_intermedia.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>login?faces-redirect=true</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+            <redirect />
+        </navigation-case>
+    </navigation-rule>
+
+</faces-config>

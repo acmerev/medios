@@ -1,0 +1,228 @@
+:root {
+    --primary-color: #2563eb;
+    --hover-color: #1d4ed8;
+    --text-color: #ffffff;
+    --submenu-bg: #ffffff;
+    --submenu-text: #1e293b;
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    line-height: 1.5;
+    color: #333;
+    background-color: #f8fafc;
+}
+
+div.clear { clear: both; }
+
+/* Header styles */
+#header {
+    position: relative;
+    padding: 10px 20px;
+    background: white;
+    border-bottom: 1px solid #e2e8f0;
+    box-shadow: var(--shadow);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#header-title {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #1e293b;
+}
+
+/* Navigation bar */
+#nav {
+    width: 100%;
+    background: var(--primary-color);
+    box-shadow: var(--shadow);
+}
+
+/* Modern menu styles */
+#menu {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+#menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+#menu ul li {
+    position: relative;
+}
+
+#menu ul li a {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 0.875rem;
+    color: var(--text-color);
+    padding: 0.75rem 1.5rem;
+    transition: all 0.2s ease;
+    font-weight: 500;
+}
+
+#menu ul li:hover > a {
+    background-color: var(--hover-color);
+}
+
+/* First level dropdown menu */
+#menu ul li ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: var(--submenu-bg);
+    min-width: 200px;
+    z-index: 1000;
+    box-shadow: var(--shadow);
+    border-radius: 0 0 4px 4px;
+    flex-direction: column;
+}
+
+#menu ul li:hover > ul {
+    display: flex;
+    animation: fadeIn 0.2s ease-in-out;
+}
+
+#menu ul li ul li {
+    border-bottom: 1px solid #f1f5f9;
+}
+
+#menu ul li ul li:last-child {
+    border-bottom: none;
+}
+
+#menu ul li ul li a {
+    color: var(--submenu-text);
+    text-align: left;
+    padding: 0.75rem 1rem;
+    background: transparent;
+    display: block;
+    text-decoration: none;
+}
+
+#menu ul li ul li a:hover {
+    background: #f1f5f9;
+    color: var(--primary-color);
+    cursor: pointer;
+}
+
+/* Estilo específico para el texto dentro de los commandLink en el submenú */
+#menu ul li ul li h\:outputText { /* Apuntamos directamente al h:outputText */
+    color: var(--submenu-text) !important;
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 0.75rem 1rem;
+    box-sizing: border-box; /* Para que el padding no aumente el ancho */
+}
+
+#menu ul li ul li h\:outputText:hover {
+    background: #f1f5f9;
+    color: var(--primary-color) !important;
+    cursor: pointer;
+}
+
+/* Second level dropdown menu */
+#menu ul li ul li ul {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    background: var(--submenu-bg);
+    min-width: 200px;
+    z-index: 1001;
+    box-shadow: var(--shadow);
+    border-radius: 4px;
+    flex-direction: column;
+}
+
+#menu ul li ul li:hover > ul {
+    display: flex;
+    animation: fadeIn 0.2s ease-in-out;
+}
+
+#menu ul li ul li ul li a {
+    color: var(--submenu-text);
+    text-align: left;
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #f1f5f9;
+    background: transparent;
+}
+
+#menu ul li ul li ul li a:hover {
+    background: #f1f5f9;
+    color: var(--primary-color);
+}
+
+#menu ul li ul li ul li:last-child a {
+    border-bottom: none;
+}
+
+/* User bar styles */
+#user-bar {
+    background-color: white;
+    border-bottom: 1px solid #e2e8f0;
+    padding: 0.75rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: var(--shadow);
+}
+
+#user-info {
+    font-size: 0.875rem;
+    color: #64748b;
+}
+
+.register-btn {
+    background-color: #ef4444 !important;
+    color: white !important;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    font-size: 0.875rem;
+}
+
+.register-btn:hover {
+    background-color: #dc2626 !important;
+    transform: translateY(-1px);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    #menu ul {
+        flex-direction: column;
+    }
+
+    #menu ul li ul {
+        position: static;
+        box-shadow: none;
+    }
+
+    #menu ul li ul li ul {
+        position: static;
+        box-shadow: none;
+    }
+}

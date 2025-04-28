@@ -1,0 +1,160 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+    <title>Principal: Medios magneticos</title>
+    <link rel="stylesheet" type="text/css" href="/css/menu-style-v12.css">
+</h:head>
+
+<h:body>
+    <f:view>
+        <h:form id="fContenido">
+            <div id="header">
+                <div id="user-bar">
+                    <div class="user-info">
+                        <h:outputText value="Bienvenidos " />
+                        <h:outputText value="#{loginBean.user.correo}" style="font-weight: bold;" />
+                    </div>
+                    <div>
+                        <h:commandButton styleClass="register-btn" value="X" action="#{loginBean.deslogar}" />
+                    </div>
+                </div>
+                <div class="header-title"></div>
+                <div id="header-logo">
+                    <h:graphicImage id="logo" url="#{resource['Images:logo_buro.jpg']}" />
+                </div>
+            </div>
+
+            <div id="nav">
+                <div id="menu">
+                    <ul>
+                        <li class="m-01"><a href="#" class="m-01">MEDIOS</a>
+                            <ul>
+                                <li><a href="/jsf_medios/pages/altamedios.xhtml?inicio=true">Consulta Medios</a></li>
+                                <li><a href="/jsf_medios/pages/criteriosBitacora.xhtml?inicio=true">Consulta
+                                        Bitacora</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="m-02"><a href="#" class="m-02">Entradas</a>
+                            <ul>
+                                <li><a href="#" style="font-weight: bold;">Entradas</a>
+                                    <ul>
+                                        <li><a href="/jsf_medios/pages/altaEntradas.xhtml?inicio=altaMensaje" hola
+                                                mensaje">Alta</a></li>
+                                        <li><a href="/jsf_medios/pages/criteriosEntradas.xhtml?inicio=crit">Consultar /
+                                                Actualizar/Cancelar</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#" style="font-weight: bold;">Reingresos</a>
+                                    <ul>
+                                        <li><a href="/jsf_medios/pages/altaReingreso.xhtml?inicio=alta">Alta</a></li>
+                                        <li><a href="/jsf_medios/pages/criteriosReingreso.xhtml?inicio=crit">Consultar /
+                                                Actualizar/Cancelar</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="m-03"><a href="#" class="m-03">Salidas</a>
+                            <ul>
+                                <li><a href="/jsf_medios/pages/altaSalidas.xhtml?inicio=alta">Alta</a></li>
+                                <li><a href="/jsf_medios/pages/criteriosSalidas.xhtml?inicio=crit">Consultas /
+                                        Actualizar / Imprimir</a></li>
+                            </ul>
+                        </li>
+                        <li class="m-04"><a href="#" class="m-04">Procesos</a>
+                            <ul>
+                                <li><a href="#" style="font-weight: bold;">Respaldo</a>
+                                    <ul>
+                                        <li><a href="/jsf_medios/pages/altaRespaldo.xhtml?inicio=true">Alta</a></li>
+                                        <li><a href="/jsf_medios/pages/criteriosRespaldo.xhtml?inicio=crit">Consultar /
+                                                Actualizar</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#" style="font-weight: bold;">Reciclaje</a>
+                                    <ul>
+                                        <li><a href="/jsf_medios/pages/altaReciclaje.xhtml?inicio=true">Alta</a></li>
+                                        <li><a href="/jsf_medios/pages/criteriosReciclaje.xhtml?inicio=crit">Consultar /
+                                                Actualizar</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#" style="font-weight: bold;">Correo Moroso</a>
+                                    <ul>
+                                        <li><a href="/jsf_medios/pages/altaCorreo_moroso.xhtml?inicio=true">Envio correo
+                                                moroso</a></li>
+                                        <li><a href="/jsf_medios/pages/critProrroga.xhtml?inicio=true">Prorrogas</a></li>
+                                        <li><a href="/jsf_medios/pages/criteriosCorreo_moroso.xhtml?inicio=true">Consultas</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="m-05"><a href="#" class="m-05">Catalogos</a>
+                            <ul>
+                                <li><a href="#" style="font-weight: bold;">Usuarios</a>
+                                    <ul>
+                                        <li></li>
+                                        <li rendered="#{loginBean.user.isAdmin}">
+                                            <a href="/jsf_medios/pages/altaUsuarios.xhtml?inicio=true">Alta</a>
+                                        </li>
+                                        <li><a href="/jsf_medios/pages/criteriosUsuarios.xhtml?inicio=crit">Consulta /
+                                                Actualizar</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="/jsf_medios/pages/altaContenido.xhtml?inicio=true">Contenido</a></li>
+                                <li><a href="/jsf_medios/pages/altaCatalogo.xhtml?inicio=true">Pequeños Catalogos</a></li>
+                                <li><a href="#" style="font-weight: bold;">Tipos de medios magneticos</a>
+                                    <ul>
+                                        <li></li>
+                                        <li><a href="/jsf_medios/pages/altaTipo_medio.xhtml?inicio=true">Alta</a></li>
+                                        <li><a href="/jsf_medios/pages/consultaTipo_medio.xhtml?inicio=true">Consulta /
+                                                Actualizar</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#" style="font-weight: bold;">Area Destino</a>
+                                    <ul>
+                                        <li></li>
+                                        <li><a href="/jsf_medios/pages/altaArea_destino.xhtml?inicio=true">Alta</a></li>
+                                        <li><a href="/jsf_medios/pages/criteriosArea_destino.xhtml?inicio=true">Consultar /
+                                                Actualizar</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="m-06"><a href="#" class="m-06">Reportes</a>
+                            <ul>
+                                <li>
+                                    <h:commandLink target="_popupWindow" id="invtot" action="#{reporteInventario}">
+                                        <h:outputText value="Inventario C/Totales" />
+                                        <f:param name="tipo" value="con" />
+                                    </h:commandLink>
+                                </li>
+                                <li>
+                                    <h:commandLink target="_popupWindow" id="invstot" action="#{reporteInventario}">
+                                        <h:outputText value="Inventario S/Totales" />
+                                        <f:param name="tipo" value="sin" />
+                                    </h:commandLink>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="m-07"><a href="#" class="m-07">Acerca de</a>
+                            <ul>
+                                <li></li>
+                                <li>Version 1.41 --25/01/2022 Canc Mdc</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="footer">
+                <ul>
+                    </ul>
+            </div>
+        </h:form>
+    </f:view>
+</h:body>
+
+</html>

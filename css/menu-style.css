@@ -1,0 +1,121 @@
+body {
+    margin: 0 auto;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+div.clear { clear: both; }
+
+#header-title {
+    float:left;
+    width: 85%;
+    margin: 10px 0 0 20px;
+    height: 70px;
+}
+
+#nav {
+    margin: 0 auto;
+    width: 96%;
+    height: 32px;
+    background: url(/jsf_medios/resources/images/img_top_pteco.jpg) repeat;
+}
+/* Css para menu desplegable de indicadores */
+
+#menu {
+    width: 920px;
+}
+
+#menu ul { list-style-type: none; }
+#menu ul li { float: left; margin-right: 0px; }
+#menu ul li a { display: block;
+    text-align: center;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    color: #fff;
+    border-right: solid 1px #2B5DA2;
+    padding: 5px 2px 0px 2px;
+    height: 20px;
+}
+
+#menu ul li a:hover, #menu ul li:hover { color: #c0c0c0; }
+#menu ul li ul { display: none; }
+
+#menu ul li a:hover ul, #menu ul li:hover ul { display: block; left: 0px; }
+#menu ul li ul li a {
+    position: relative;
+    top: .45em;
+    left: -3.5em;
+    width: 180px;
+    color: #003399;
+    text-align: left;
+    font-size: 12px;
+    background: #e9f5ff;
+    padding: 4px 0px 3px 5px;
+    border-right: 2px solid #b6deff;
+    border-left: 3px solid #b6deff;
+    border-bottom: 1px solid #b6deff;
+}
+
+#menu ul li ul li a:hover { background: #3da8ea;
+    color: #ffffff;
+}
+
+.m-01 { width:94px;}
+.m-02 { width:107px;}
+.m-03 { width:130px;}
+.m-04 { width:110px;}
+.m-05 { width:130px;}
+.m-06 { width:110px;}
+.m-07 { width:100px;}
+
+#user-bar {
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #ccc;
+    padding: 10px 20px;
+    font-family: 'Segoe UI', sans-serif;
+    color: #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#user-bar .user-info {
+    font-size: 14px;
+}
+
+.register-btn {
+    background-color: #e74c3c !important;
+    color: white !important;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.register-btn:hover {
+    background-color: #c0392b !important;
+}
+
+#header {
+    position: relative;
+    padding: 10px;
+    background: #f4f4f4;
+    border-bottom: 1px solid #ccc;
+}
+
+#user-info {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+}
+
+#header-logo {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}

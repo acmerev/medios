@@ -192,7 +192,7 @@ body {
 .forgot-password {
     color: #007bff;
     text-decoration: none;
-    font-size: 0.9em;
+    font-weight: 0.9em;
     margin-top: 15px;
     text-align: left;
 }
